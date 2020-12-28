@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Restaurants | display</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center p-4">
+            <a href="/rate/<%=restaurant._id%>" class="btn btn-outline-primary col-3 m-1">Rate</a>
+            <% if (user.trim() === restaurant.owner.trim()) { %>
+            <a href="/delete/<%=restaurant._id%>" class="btn btn-outline-danger col-3 m-1">Delete</a>
+            <a href="/edit/<%=restaurant._id%>" class="btn btn-outline-secondary col-3 m-1">Edit</a>
+            <% } %>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3><%=restaurant.name%></h3>
+                <hr>
+                <% if (restaurant.image) { %>
+                <img src="<%=restaurant.image%>" alt="image">
+                <% } %>
+                <ul class="list-group">
+                    <li class="list-group-item">Borough: <b><%=restaurant.borough %></b> </li>
+                    <li class="list-group-item">Cuisine: <b><%=restaurant.cuisine %></b> </li>
+                    <li class="list-group-item">Owner: <b><%=restaurant.owner %></b> </li>
+                    <hr>
+                    <small class="caption">Address</small>
+                    <li class="list-group-item">Street: <b><%=restaurant.address.street %></b> </li>
+                    <li class="list-group-item">Building: <b><%=restaurant.address.building %></b> </li>
+                    <li class="list-group-item">Zipcode: <b><%=restaurant.address.zipcode %></b> </li>
+                    <li class="list-group-item">Map Coordinates: <b><%=restaurant.address.coord %></b>
+                        <% if (restaurant.address) { %>
+                        <a
+                            href="https://www.openstreetmap.org/search?query=<%=restaurant.address.coord.split(',')[0]%>%2C<%=restaurant.address.coord.split(',')[1]%>#map=6/<%=restaurant.address.coord.split(',')[0]%>/<%=restaurant.address.coord.split(',')[1]%>">Open
+                            map</a>
+                        <% } %></li>
+                    <hr>
+                    <small class="caption">
+                        Ratings
+                    </small>
+
+                    <ul class="list-group">
+                        <% if (restaurant.grades) { %>
+                        <% restaurant.grades.forEach(element =>{%>
+                        <li class="list-group-item">User: <%=element.user%> </li>
+                        <li class="list-group-item">Rating: <%=element.rating %>/10 </li>
+                        <hr>
+                        <% }); %>
+                        <% }else{ %>
+                        <li class="list-group-item">No ratings</li>
+                        <%}%>
+                    </ul>
+                </ul>
+            </div>
+
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>

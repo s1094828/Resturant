@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Add new</title>
+</head>
+
+<body>
+    <div class="container text-center p-4">
+        <div class="row text-center">
+            <h1>Create new Restaurant document</h1>
+        </div>
+        <form class="card shadow-lg" method="POST" class="form">
+            <p>Enter the following details</p>
+            <div class="containter p-4">
+                <input type="hidden" name="owner" value="<%=owner%>" class="form-control">
+                <input type="text" name="name" placeholder="Enter Restaurant name" required class="form-control">
+                <br>
+                <input type="text" name="borough" placeholder="Enter borough" class="form-control">
+                <br>
+                <input type="text" name="cuisine" placeholder="Enter cuisine" class="form-control">
+                <br>
+                <input type="text" name="street" placeholder="enter street">
+                <input type="text" name="building" placeholder="Enter building">
+                <input type="text" name="zipcode" placeholder="Enter Zipcode">
+                <input type="text" name="coord" placeholder="Enter coords">
+                <hr>
+                <input type="text" name="image" placeholder="Image Url">
+                <br>
+                <br>
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

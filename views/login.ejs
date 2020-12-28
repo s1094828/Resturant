@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Restaurants</title>
+</head>
+
+<body>
+    <div class="row text-center">
+        <h1>Sign in</h1>
+        <hr>
+        <p>Please enter the credentials below</p>
+    </div>
+    <div class="container shadow p-3 alert-info">
+        <form method="POST" action="/login">
+            <div class="mb-3">
+                <label for="InputEmail1" class="form-label">Your Username</label>
+                <input type="text" class="form-control" id="InputEmail1" aria-describedby="emailHelp" name="username">
+                <div id="emailHelp" class="form-text">your account's Identifying name</div>
+            </div>
+            <div class="mb-3">
+                <label for="InputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="InputPassword1" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+    </div>
+</body>
+
+</html>
